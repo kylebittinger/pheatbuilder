@@ -1,7 +1,8 @@
 #' Set display style for heatmap
 #'
 #' @param ph Heatmap of class "pheat"
-#' @param border_color Border color for cells
+#' @param border_color Border color for cells. Set to \code{NA} to remove cell
+#'   borders.
 #' @param fontsize Base font size for heatmap
 #' @param title Title of heatmap
 #' @param height,width Row height and column width. If set to \code{NA}, the
