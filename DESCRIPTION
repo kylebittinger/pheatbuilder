@@ -1,0 +1,17 @@
+Package: pheatbuilder
+Type: Package
+Title: Build a heatmap in stages
+Version: 0.1.0
+Authors@R: person("Kyle", "Bittinger", email = "kylebittinger@gmail.com",
+  role = c("aut", "cre"))
+Description: This package offers a more convenient interface for heatmaps,
+  where function calls can be chained to produce the final product.
+License: GPL-3
+Encoding: UTF-8
+LazyData: true
+Suggests: 
+    testthat,
+    pheatmap
+RoxygenNote: 7.1.1
+Depends: 
+    R (>= 2.10)
