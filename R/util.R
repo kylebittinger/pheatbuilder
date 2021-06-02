@@ -38,6 +38,7 @@ factor_palette <- function (x, colors, ...) {
   last_colors <- setdiff(seq_along(colors), first_colors)
   color_idx <- c(first_colors, last_colors)
   palette <- colors[color_idx]
+  palette <- palette[seq_along(x_levels)]
   names(palette) <- x_levels
   palette
 }
