@@ -35,17 +35,7 @@ To adjust the heatmap, additional functions can be chained. Let’s
 cluster the rows and remove the cell borders.
 
 ``` r
-suppressWarnings(library(magrittr))
-```
-
-    ## 
-    ## Attaching package: 'magrittr'
-
-    ## The following objects are masked from 'package:testthat':
-    ## 
-    ##     equals, is_less_than, not
-
-``` r
+library(magrittr)
 vendor_props %>%
   pheat() %>%
   pheat_cluster_rows() %>%

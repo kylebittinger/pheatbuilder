@@ -46,8 +46,8 @@ pheat(vendor_props)
 To adjust the heatmap, additional functions can be chained. Let's cluster
 the rows and remove the cell borders.
 
-```{r}
-suppressWarnings(library(magrittr))
+```{r warning=FALSE, message=FALSE}
+library(magrittr)
 vendor_props %>%
   pheat() %>%
   pheat_cluster_rows() %>%
