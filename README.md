@@ -159,7 +159,7 @@ to highlight values that are zero (white) or above 0.4 (red).
 ``` r
 vendor_props %>%
   pheat() %>%
-  pheat_color_saturated(saturation_limit = 0.4)
+  pheat_color_saturated()
 ```
 
 ![](tools/readme/unnamed-chunk-13-1.png)<!-- -->
