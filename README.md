@@ -93,18 +93,38 @@ after which the gaps are to appear. As a convenience, we provide the
 `factor_gaps` function to generate gap locations automatically based on
 a factor or character vector.
 
+For example, we can create a vector of gap locations for the mouse
+vendor.
+
+``` r
+factor_gaps(vendor_samples$vendor)
+```
+
+    ## [1]  4  8 12 15 19 22 26
+
+And here is a vector of gaps between bacterial phyla.
+
+``` r
+factor_gaps(vendor_taxa$phylum)
+```
+
+    ## [1]  5 10
+
+Putting these both in the plot, we can add gaps in the rows and columns.
+
 ``` r
 vendor_props %>%
   pheat() %>%
-  pheat_display_cols(gaps = factor_gaps(vendor_samples$vendor))
+  pheat_display_cols(gaps = factor_gaps(vendor_samples$vendor)) %>%
+  pheat_display_rows(gaps = factor_gaps(vendor_taxa$phylum))
 ```
 
-![](tools/readme/unnamed-chunk-9-1.png)<!-- -->
+![](tools/readme/unnamed-chunk-11-1.png)<!-- -->
 
-A common trouble spot with annotated heatmaps is setting the color
-palettes for various annotations. The function `factor_palette` allows
-the user to creat a named vector of colors, and to pull specific colors
-to the front if needed.
+One trouble spot with annotated heatmaps is setting the color palettes
+for various annotations. The function `factor_palette` allows the user
+to create a named vector of colors, and to pull specific colors to the
+front if needed.
 
 Here, we take the third color from the “Set 2” palette and use it as the
 first color in our palette for sample types. The remaining colors in the
@@ -130,4 +150,4 @@ vendor_props %>%
     vendor = vendor_colors)
 ```
 
-![](tools/readme/unnamed-chunk-10-1.png)<!-- -->
+![](tools/readme/unnamed-chunk-12-1.png)<!-- -->
