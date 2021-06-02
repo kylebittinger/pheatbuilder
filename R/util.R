@@ -7,7 +7,8 @@
 factor_gaps <- function (x) {
   x <- as.character(x)
   x_len <- rle(x)$lengths
-  cumsum(x_len) %>% head(n=-1)
+  cum_x_len <- cumsum(x_len)
+  head(cum_x_len, n=-1)
 }
 
 #' Create a named color palette for a factor
