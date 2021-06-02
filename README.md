@@ -21,9 +21,9 @@ The pheatbuilder package comes with a built-in dataset, `vendor_props`.
 This data matrix contains bacterial taxon proportions in cecal and fecal
 samples in mice from four different vendors.
 
-Heatmaps start by passing a matrix or data frame to `pheat()`. By
-default, the cells of the heatmap are 10pt square (matching the default
-font size), and the rows/columns are not clustered.
+Heatmaps start by passing a matrix or data frame to the `pheat`
+function. By default, the cells of the heatmap are 10pt square (matching
+the default font size), and the rows/columns are not clustered.
 
 ``` r
 pheat(vendor_props)
@@ -71,7 +71,7 @@ vendor_props %>%
 
 ![](tools/readme/unnamed-chunk-7-1.png)<!-- -->
 
-Heatmaps can be saved with a call to `pheat_save()`. If the height and
+Heatmaps can be saved with a call to `pheat_save`. If the height and
 width are not set, the document is automatically sized to fit the
 heatmap.
 
@@ -83,9 +83,9 @@ vendor_props %>%
 
 The function `pheat_save` returns the heatmap invisibly. If you still
 want to see the heatmap on screen after it is saved to a file, you can
-add `print()` to the chain of functions.
+add `print` to the chain of functions at the end.
 
-## Additional functions: `factor_gaps` and `factor_palette`
+## Convenience functions for gaps and color palettes
 
 Sometimes it’s nice to have gaps between rows or columns of the heatmap.
 The gap locations are typically specified with row or column numbers,
@@ -104,20 +104,30 @@ vendor_props %>%
 A common trouble spot with annotated heatmaps is setting the color
 palettes for various annotations. The function `factor_palette` allows
 the user to creat a named vector of colors, and to pull specific colors
-to the front if needed. Here, we take the third color from the “Set 2”
-palette and use it as the first color in our palette for sample types.
-The remaining colors in the “Set 2” palette are used as needed for the
-additional sample types.
+to the front if needed.
+
+Here, we take the third color from the “Set 2” palette and use it as the
+first color in our palette for sample types. The remaining colors in the
+“Set 2” palette are used as needed for the additional sample types.
+
+For vendors, we use only the odd colors from the “Paired” palette, to
+keep the color scheme light.
 
 ``` r
 sample_type_colors <- factor_palette(
   vendor_samples$sample_type, 
   palette.colors(palette = "Set 2"), 
   3)
+vendor_colors <- factor_palette(
+  vendor_samples$vendor,
+  palette.colors(palette = "Paired"),
+  1, 3, 5, 7)
 vendor_props %>%
   pheat() %>%
   pheat_annotate_cols(vendor_samples) %>%
-  pheat_annotation_color(sample_type = sample_type_colors)
+  pheat_annotation_color(
+    sample_type = sample_type_colors,
+    vendor = vendor_colors)
 ```
 
 ![](tools/readme/unnamed-chunk-10-1.png)<!-- -->
