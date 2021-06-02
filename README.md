@@ -1,8 +1,6 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-    ## Warning: package 'testthat' was built under R version 4.0.2
-
 # pheatbuilder
 
 This package provides a stepwise, pipe-friendly interface to create
