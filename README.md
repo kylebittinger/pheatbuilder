@@ -151,3 +151,15 @@ vendor_props %>%
 ```
 
 ![](tools/readme/unnamed-chunk-12-1.png)<!-- -->
+
+Another convenience function is `pheat_color_saturated`, which applies a
+saturated-rainbow color palette to the heatmap. It’s ugly, but it works
+to highlight values that are zero (white) or above 0.4 (red).
+
+``` r
+vendor_props %>%
+  pheat() %>%
+  pheat_color_saturated(saturation_limit = 0.4)
+```
+
+![](tools/readme/unnamed-chunk-13-1.png)<!-- -->

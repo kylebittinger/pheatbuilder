@@ -32,7 +32,8 @@ pheat_display_cols(
 \arguments{
 \item{ph}{Heatmap of class "pheat"}
 
-\item{border_color}{Border color for cells}
+\item{border_color}{Border color for cells. Set to \code{NA} to remove cell
+borders.}
 
 \item{fontsize}{Font size for row or column names}
 
