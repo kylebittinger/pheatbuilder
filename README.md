@@ -4,7 +4,9 @@
 # pheatbuilder
 
 This package provides a stepwise, pipe-friendly interface to create
-heatmaps in R.
+heatmaps in R. The underlying heatmap engine is provided by the
+excellent [pheatmap](https://cran.r-project.org/web/packages/pheatmap/)
+package.
 
 ## Installation
 
