@@ -7,7 +7,13 @@
 \alias{pheat_display_cols}
 \title{Set display style for heatmap}
 \usage{
-pheat_display_main(ph, border_color = "grey60", fontsize = 10, title = NA)
+pheat_display_main(
+  ph,
+  border_color = "grey60",
+  fontsize = 10,
+  title = NA,
+  display_numbers = F
+)
 
 pheat_display_rows(
   ph,
@@ -38,6 +44,8 @@ borders.}
 \item{fontsize}{Font size for row or column names}
 
 \item{title}{Title of heatmap}
+
+\item{display_numbers}{logical determining if the numeric values are also printed to the cells. If this is a matrix (with same dimensions as original matrix), the contents of the matrix are shown instead of original values.}
 
 \item{height, width}{Row height and column width. If set to \code{NA}, the
 size varies according to the available space}

@@ -5,14 +5,16 @@ test_that("pheat_display_main sets default values", {
   expect_equal(ph$border_color, "grey60")
   expect_equal(ph$fontsize, 10)
   expect_equal(ph$main, NA)
+  expect_equal(ph$display_numbers, F)
 })
 
 test_that("pheat_display_main sets attributes correctly", {
   ph <- pheat_display_main(
-    pheat(x), border_color = "#666666", fontsize = 20, title = "Hello there")
+    pheat(x), border_color = "#666666", fontsize = 20, title = "Hello there", display_numbers = T)
   expect_equal(ph$border_color, "#666666")
   expect_equal(ph$fontsize, 20)
   expect_equal(ph$main, "Hello there")
+  expect_equal(ph$display_numbers, T)
 })
 
 test_that("pheat_display_rows does not store fontsize if not given", {
