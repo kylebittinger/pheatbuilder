@@ -8,7 +8,7 @@ test_that("pheat works for matrix", {
 test_that("pheat works for data frame with rownames", {
   xdf <- data.frame(x=1:3, y=4:6, z=7:9)
   rownames(xdf) <- c("a", "b", "c")
-  ph <- pheat(xdf, rownames_idx = NULL)
+  ph <- pheat(xdf, rownames_in = NULL)
   expect_equal(ph$mat, x)
 })
 

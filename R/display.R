@@ -18,6 +18,7 @@
 #' @param dendrogram_width,dendrogram_height Width and height of dendrograms
 #'   for rows and columns, respectively, in points. If set to NA, the default
 #'   value of 50 points will be used.
+#' @param display_numbers logical determining if the numeric values are also printed to the cells. If this is a matrix (with same dimensions as original matrix), the contents of the matrix are shown instead of original values.
 #' @return A modified heatmap of class "pheat"
 #' @name pheat_display
 #' @examples
@@ -38,10 +39,12 @@ NULL
 pheat_display_main <- function (ph,
                                 border_color = "grey60",
                                 fontsize = 10,
-                                title = NA) {
+                                title = NA,
+                                display_numbers = F) {
   ph$border_color <- border_color
   ph$fontsize <- fontsize
   ph$main <- title
+  ph$display_numbers <- display_numbers
   ph
 }
 
