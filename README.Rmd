@@ -2,11 +2,20 @@
 output: github_document
 ---
 
+<!-- badges: start -->
+[![R-CMD-check](https://github.com/kylebittinger/pheatbuilder/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kylebittinger/pheatbuilder/actions/workflows/R-CMD-check.yaml)
+[![Codecov test coverage](https://codecov.io/gh/kylebittinger/pheatbuilder/graph/badge.svg)](https://app.codecov.io/gh/kylebittinger/pheatbuilder)
+<!-- badges: end -->
+  
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, echo = FALSE}
 knitr::opts_chunk$set(
-  fig.path = "tools/readme/"
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "man/figures/README-",
+  dpi = 200,
+  out.width = "100%"
 )
 ```
 

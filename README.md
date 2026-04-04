@@ -1,4 +1,11 @@
 
+<!-- badges: start -->
+
+[![R-CMD-check](https://github.com/kylebittinger/pheatbuilder/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/kylebittinger/pheatbuilder/actions/workflows/R-CMD-check.yaml)
+[![Codecov test
+coverage](https://codecov.io/gh/kylebittinger/pheatbuilder/graph/badge.svg)](https://app.codecov.io/gh/kylebittinger/pheatbuilder)
+<!-- badges: end -->
+
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 # pheatbuilder
@@ -31,7 +38,7 @@ the default font size), and the rows/columns are not clustered.
 pheat(vendor_props)
 ```
 
-![](tools/readme/unnamed-chunk-4-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-4-1.png" alt="" width="100%" />
 
 To adjust the heatmap, additional functions can be chained. Let’s
 cluster the rows and remove the cell borders.
@@ -44,7 +51,7 @@ vendor_props %>%
   pheat_display_main(border_color = NA)
 ```
 
-![](tools/readme/unnamed-chunk-5-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-5-1.png" alt="" width="100%" />
 
 If you have data frames with additional info for the rows and columns,
 thse can be added as annotations to the heatmap. The data frame
@@ -52,15 +59,14 @@ thse can be added as annotations to the heatmap. The data frame
 
 ``` r
 head(vendor_samples)
+#>   sample_id sample_type         vendor
+#> 1  CR.20.CE       Cecum Charles River 
+#> 2  CR.21.CE       Cecum Charles River 
+#> 3  CR.22.CE       Cecum Charles River 
+#> 4  CR.23.CE       Cecum Charles River 
+#> 5 Env.10.CE       Cecum         Envigo
+#> 6 Env.11.CE       Cecum         Envigo
 ```
-
-    ##   sample_id sample_type         vendor
-    ## 1  CR.20.CE       Cecum Charles River 
-    ## 2  CR.21.CE       Cecum Charles River 
-    ## 3  CR.22.CE       Cecum Charles River 
-    ## 4  CR.23.CE       Cecum Charles River 
-    ## 5 Env.10.CE       Cecum         Envigo
-    ## 6 Env.11.CE       Cecum         Envigo
 
 By default, values in the first column are used to match to the heatmap
 grid.
@@ -71,7 +77,7 @@ vendor_props %>%
   pheat_annotate_cols(vendor_samples)
 ```
 
-![](tools/readme/unnamed-chunk-7-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-7-1.png" alt="" width="100%" />
 
 Heatmaps can be saved with a call to `pheat_save`. If the height and
 width are not set, the document is automatically sized to fit the
@@ -100,17 +106,15 @@ vendor.
 
 ``` r
 factor_gaps(vendor_samples$vendor)
+#> [1]  4  8 12 15 19 22 26
 ```
-
-    ## [1]  4  8 12 15 19 22 26
 
 And here is a vector of gaps between bacterial phyla.
 
 ``` r
 factor_gaps(vendor_taxa$phylum)
+#> [1]  5 10
 ```
-
-    ## [1]  5 10
 
 Putting these both in the plot, we can add gaps in the rows and columns.
 
@@ -121,7 +125,7 @@ vendor_props %>%
   pheat_display_rows(gaps = factor_gaps(vendor_taxa$phylum))
 ```
 
-![](tools/readme/unnamed-chunk-11-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-11-1.png" alt="" width="100%" />
 
 One trouble spot with annotated heatmaps is setting the color palettes
 for various annotations. The function `factor_palette` allows the user
@@ -152,7 +156,7 @@ vendor_props %>%
     vendor = vendor_colors)
 ```
 
-![](tools/readme/unnamed-chunk-12-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-12-1.png" alt="" width="100%" />
 
 Another convenience function is `pheat_color_saturated`, which applies a
 saturated-rainbow color palette to the heatmap. It’s ugly, but it works
@@ -164,4 +168,4 @@ vendor_props %>%
   pheat_color_saturated()
 ```
 
-![](tools/readme/unnamed-chunk-13-1.png)<!-- -->
+<img src="man/figures/README-unnamed-chunk-13-1.png" alt="" width="100%" />

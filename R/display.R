@@ -18,7 +18,9 @@
 #' @param dendrogram_width,dendrogram_height Width and height of dendrograms
 #'   for rows and columns, respectively, in points. If set to NA, the default
 #'   value of 50 points will be used.
-#' @param display_numbers logical determining if the numeric values are also printed to the cells. If this is a matrix (with same dimensions as original matrix), the contents of the matrix are shown instead of original values.
+#' @param display_numbers logical determining if the numeric values are also
+#' printed to the cells. If this is a matrix (with same dimensions as original
+#' matrix), the contents of the matrix are shown instead of original values.
 #' @return A modified heatmap of class "pheat"
 #' @name pheat_display
 #' @examples
@@ -36,11 +38,13 @@ NULL
 
 #' @rdname pheat_display
 #' @export
-pheat_display_main <- function (ph,
-                                border_color = "grey60",
-                                fontsize = 10,
-                                title = NA,
-                                display_numbers = F) {
+pheat_display_main <- function(
+  ph,
+  border_color = "grey60",
+  fontsize = 10,
+  title = NA,
+  display_numbers = FALSE
+) {
   ph$border_color <- border_color
   ph$fontsize <- fontsize
   ph$main <- title
@@ -50,13 +54,15 @@ pheat_display_main <- function (ph,
 
 #' @rdname pheat_display
 #' @export
-pheat_display_rows <- function (ph,
-                                height = 10,
-                                show_names = TRUE,
-                                fontsize = NA,
-                                gaps = NULL,
-                                labels = NULL,
-                                dendrogram_width = NA) {
+pheat_display_rows <- function(
+  ph,
+  height = 10,
+  show_names = TRUE,
+  fontsize = NA,
+  gaps = NULL,
+  labels = NULL,
+  dendrogram_width = NA
+) {
   ph$cellheight <- height
   ph$show_rownames <- show_names
   # If fontsize is not given, we leave it out of the resultant object
@@ -77,13 +83,15 @@ pheat_display_rows <- function (ph,
 
 #' @rdname pheat_display
 #' @export
-pheat_display_cols <- function (ph,
-                                width = 10,
-                                show_names = TRUE,
-                                fontsize = NA,
-                                gaps = NULL,
-                                labels = NULL,
-                                dendrogram_height = NA) {
+pheat_display_cols <- function(
+  ph,
+  width = 10,
+  show_names = TRUE,
+  fontsize = NA,
+  gaps = NULL,
+  labels = NULL,
+  dendrogram_height = NA
+) {
   ph$cellwidth <- width
   ph$show_colnames <- show_names
   if (not_scalar_na(fontsize)) {

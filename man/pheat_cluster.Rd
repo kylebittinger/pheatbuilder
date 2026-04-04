@@ -14,7 +14,7 @@ pheat_cluster_rows(
 )
 
 pheat_cluster_cols(
-  obj,
+  ph,
   distance = "euclidean",
   method = "complete",
   custom = NULL

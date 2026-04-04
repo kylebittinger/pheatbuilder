@@ -4,11 +4,11 @@
 #' @return A numeric vector of gap locations, suitable for the \code{gaps}
 #'   argument of \code{pheat_display_rows} or \code{pheat_display_cols}
 #' @export
-factor_gaps <- function (x) {
+factor_gaps <- function(x) {
   x <- as.character(x)
   x_len <- rle(x)$lengths
   cum_x_len <- cumsum(x_len)
-  head(cum_x_len, n=-1)
+  utils::head(cum_x_len, n = -1)
 }
 
 #' Create a named color palette for a factor
@@ -24,7 +24,7 @@ factor_gaps <- function (x) {
 #'   which will print out the code for the resultant palette. This way, color
 #'   palettes can be hard-coded into scripts, which will preserve the color
 #'   scheme even if the levels of the factor were to change in the future.
-factor_palette <- function (x, colors, ...) {
+factor_palette <- function(x, colors, ...) {
   x_levels <- levels(as.factor(x))
   first_colors <- as.integer(c(...))
 
@@ -33,7 +33,10 @@ factor_palette <- function (x, colors, ...) {
     stop(
       "Color index out of range: ",
       first_colors[first_colors_out_of_range],
-      ". Vector of colors has ", length(colors), " elements.")
+      ". Vector of colors has ",
+      length(colors),
+      " elements."
+    )
   }
 
   last_colors <- setdiff(seq_along(colors), first_colors)
@@ -45,7 +48,7 @@ factor_palette <- function (x, colors, ...) {
 }
 
 # Convert a column into rownames
-make_rownames <- function (df, rownames_in = 1) {
+make_rownames <- function(df, rownames_in = 1) {
   if (!is.null(rownames_in)) {
     if (length(rownames_in) != 1) {
       stop("rownames_in must have length 1")
@@ -54,14 +57,14 @@ make_rownames <- function (df, rownames_in = 1) {
       rownames_in <- match(rownames_in, colnames(df))
     }
     df <- as.data.frame(df)
-    df_rownames <- df[,rownames_in]
-    df <- df[,-rownames_in, drop = FALSE]
+    df_rownames <- df[, rownames_in]
+    df <- df[, -rownames_in, drop = FALSE]
     rownames(df) <- df_rownames
   }
   df
 }
 
 # Check that value is not NA of length one
-not_scalar_na <- function (val) {
+not_scalar_na <- function(val) {
   !((length(val) == 1) && is.na(val))
 }

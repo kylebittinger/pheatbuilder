@@ -8,9 +8,9 @@
 \usage{
 pheat(x, ...)
 
-\method{pheat}{matrix}(x)
+\method{pheat}{matrix}(x, ...)
 
-\method{pheat}{data.frame}(x, rownames_in = 1)
+\method{pheat}{data.frame}(x, rownames_in = 1, ...)
 }
 \arguments{
 \item{x}{A matrix or data frame of data for the heatmap}

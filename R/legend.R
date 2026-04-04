@@ -6,7 +6,7 @@
 #' @param show If \code{FALSE}, don't show the legend
 #' @return A modified heatmap of class "pheat"
 #' @export
-pheat_legend <- function (ph, breaks = NA, labels = NA, show = TRUE) {
+pheat_legend <- function(ph, breaks = NA, labels = NA, show = TRUE) {
   ph$legend_breaks <- breaks
   ph$legend_labels <- labels
   ph$legend <- show
@@ -24,10 +24,12 @@ pheat_legend <- function (ph, breaks = NA, labels = NA, show = TRUE) {
 #' phc <- pheat_annotate_cols(pheat(vendor_props), vendor_samples)
 #' pheat_annotation_legend(phc, show_names_col = FALSE)
 #' @export
-pheat_annotation_legend <- function (ph,
-                                     show = TRUE,
-                                     show_names_row = TRUE,
-                                     show_names_col = TRUE) {
+pheat_annotation_legend <- function(
+  ph,
+  show = TRUE,
+  show_names_row = TRUE,
+  show_names_col = TRUE
+) {
   ph$annotation_legend <- show
   ph$annotation_names_row <- show_names_row
   ph$annotation_names_col <- show_names_col

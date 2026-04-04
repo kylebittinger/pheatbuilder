@@ -1,4 +1,4 @@
-x <- matrix(1:9, nrow=3, dimnames = list(c("a", "b", "c"), c("x", "y", "z")))
+x <- matrix(1:9, nrow = 3, dimnames = list(c("a", "b", "c"), c("x", "y", "z")))
 
 test_that("pheat_cluster_rows turns on clustering", {
   ph <- pheat(x)

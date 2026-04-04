@@ -5,19 +5,20 @@
 #' @examples
 #' pheat(vendor_props)
 #' @export
-pheat <- function (x, ...) {
+pheat <- function(x, ...) {
   UseMethod("pheat")
 }
 
 #' @rdname pheat
 #' @export
-pheat.matrix <- function (x) {
+pheat.matrix <- function(x, ...) {
   obj <- list(
     mat = x,
     cluster_rows = FALSE,
     cluster_cols = FALSE,
     cellwidth = 10,
-    cellheight = 10)
+    cellheight = 10
+  )
   class(obj) <- "pheat"
   obj
 }
@@ -36,7 +37,7 @@ pheat.matrix <- function (x) {
 #'   vendor_props[,1:15])
 #' rownames(vendor_props_df) <- NULL
 #' pheat(vendor_props_df, rownames_in = "taxon_id")
-pheat.data.frame <- function (x, rownames_in = 1) {
+pheat.data.frame <- function(x, rownames_in = 1, ...) {
   x <- make_rownames(x, rownames_in)
   x <- as.matrix(x)
   pheat.matrix(x)

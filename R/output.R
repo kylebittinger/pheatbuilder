@@ -1,8 +1,9 @@
 #' Print the heatmap to the screen
-#' @param ph Heatmap of class "pheat"
+#' @param x Heatmap of class "pheat"
+#' @param ... Additional arguments passed to other methods
 #' @export
-print.pheat <- function (ph, ...) {
-  pheatmap:::print.pheatmap(do.call(pheatmap::pheatmap, ph))
+print.pheat <- function(x, ...) {
+  grid::grid.draw(do.call(pheatmap::pheatmap, x))
 }
 
 #' Save the heatmap to a file
@@ -14,8 +15,7 @@ print.pheat <- function (ph, ...) {
 #'   heatmap and print to the screen by calling \code{print.pheat} on the
 #'   output of this function.
 #' @export
-pheat_save <- function (ph, filename = "heatmap.pdf",
-                        width = NA, height = NA) {
+pheat_save <- function(ph, filename = "heatmap.pdf", width = NA, height = NA) {
   ph_to_save <- ph
   ph_to_save$filename <- filename
   ph_to_save$width <- width
