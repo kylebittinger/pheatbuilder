@@ -37,6 +37,7 @@ saturated_rainbow <- function (n, saturation_limit = 0.4) {
 
 
 #' Use a saturated rainbow color palette for the heatmap
+#' @param ph Heatmap of class "pheat"
 #' @param saturation_limit The value after which the color stops changing
 #' @param upper_limit The upper limit of the scale
 #' @param na_color Color for \code{NA} values in the heatmap
@@ -52,6 +53,7 @@ pheat_color_saturated <- function (ph,
 }
 
 #' Set color palettes for heatmap annotations
+#' @param ph Heatmap of class "pheat"
 #' @param ... Expects keyword arguments where the keyword is the column name
 #'   for the annotation, and the value is a (named) character vector of colors
 #' @return A modified heatmap of class "pheat"

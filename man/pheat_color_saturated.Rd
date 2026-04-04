@@ -12,6 +12,8 @@ pheat_color_saturated(
 )
 }
 \arguments{
+\item{ph}{Heatmap of class "pheat"}
+
 \item{saturation_limit}{The value after which the color stops changing}
 
 \item{upper_limit}{The upper limit of the scale}

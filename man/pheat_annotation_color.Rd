@@ -7,6 +7,8 @@
 pheat_annotation_color(ph, ...)
 }
 \arguments{
+\item{ph}{Heatmap of class "pheat"}
+
 \item{...}{Expects keyword arguments where the keyword is the column name
 for the annotation, and the value is a (named) character vector of colors}
 }

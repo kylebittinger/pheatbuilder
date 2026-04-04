@@ -4,10 +4,12 @@
 \alias{print.pheat}
 \title{Print the heatmap to the screen}
 \usage{
-\method{print}{pheat}(ph, ...)
+\method{print}{pheat}(x, ...)
 }
 \arguments{
-\item{ph}{Heatmap of class "pheat"}
+\item{x}{Heatmap of class "pheat"}
+
+\item{...}{Additional arguments passed to other methods}
 }
 \description{
 Print the heatmap to the screen
