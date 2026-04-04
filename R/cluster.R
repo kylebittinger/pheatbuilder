@@ -14,10 +14,12 @@ NULL
 
 #' @rdname pheat_cluster
 #' @export
-pheat_cluster_rows <- function (ph,
-                                distance = "euclidean",
-                                method = "complete",
-                                custom = NULL) {
+pheat_cluster_rows <- function(
+  ph,
+  distance = "euclidean",
+  method = "complete",
+  custom = NULL
+) {
   if (is.null(custom)) {
     ph$cluster_rows <- TRUE
     ph$clustering_distance_rows <- distance
@@ -30,10 +32,12 @@ pheat_cluster_rows <- function (ph,
 
 #' @rdname pheat_cluster
 #' @export
-pheat_cluster_cols <- function (ph,
-                                distance = "euclidean",
-                                method = "complete",
-                                custom = NULL) {
+pheat_cluster_cols <- function(
+  ph,
+  distance = "euclidean",
+  method = "complete",
+  custom = NULL
+) {
   if (is.null(custom)) {
     ph$cluster_cols <- TRUE
     ph$clustering_distance_cols <- distance

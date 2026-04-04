@@ -1,4 +1,4 @@
-x <- matrix(1:9, nrow=3, dimnames = list(c("a", "b", "c"), c("x", "y", "z")))
+x <- matrix(1:9, nrow = 3, dimnames = list(c("a", "b", "c"), c("x", "y", "z")))
 
 test_that("pheat_display_main sets default values", {
   ph <- pheat_display_main(pheat(x))
@@ -10,7 +10,12 @@ test_that("pheat_display_main sets default values", {
 
 test_that("pheat_display_main sets attributes correctly", {
   ph <- pheat_display_main(
-    pheat(x), border_color = "#666666", fontsize = 20, title = "Hello there", display_numbers = T)
+    pheat(x),
+    border_color = "#666666",
+    fontsize = 20,
+    title = "Hello there",
+    display_numbers = T
+  )
   expect_equal(ph$border_color, "#666666")
   expect_equal(ph$fontsize, 20)
   expect_equal(ph$main, "Hello there")
@@ -28,8 +33,13 @@ test_that("pheat_display_rows does not store fontsize if not given", {
 
 test_that("pheat_display_rows sets correct attributes", {
   ph <- pheat_display_rows(
-    pheat(x), height = 25, show_names = FALSE, fontsize = 20, gaps = 1:2,
-    labels = c("ROWS", "ROWS", "ROWS"))
+    pheat(x),
+    height = 25,
+    show_names = FALSE,
+    fontsize = 20,
+    gaps = 1:2,
+    labels = c("ROWS", "ROWS", "ROWS")
+  )
   expect_equal(ph$cellheight, 25)
   expect_equal(ph$show_rownames, FALSE)
   expect_equal(ph$fontsize_row, 20)
@@ -48,8 +58,13 @@ test_that("pheat_display_cols does not store fontsize if not given", {
 
 test_that("pheat_display_cols sets correct attributes", {
   ph <- pheat_display_cols(
-    pheat(x), width = 25, show_names = FALSE, fontsize = 20, gaps = 1:2,
-    labels = c("COLS", "COLS", "COLS"))
+    pheat(x),
+    width = 25,
+    show_names = FALSE,
+    fontsize = 20,
+    gaps = 1:2,
+    labels = c("COLS", "COLS", "COLS")
+  )
   expect_equal(ph$cellwidth, 25)
   expect_equal(ph$show_colnames, FALSE)
   expect_equal(ph$fontsize_col, 20)

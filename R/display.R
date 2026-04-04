@@ -36,11 +36,13 @@ NULL
 
 #' @rdname pheat_display
 #' @export
-pheat_display_main <- function (ph,
-                                border_color = "grey60",
-                                fontsize = 10,
-                                title = NA,
-                                display_numbers = F) {
+pheat_display_main <- function(
+  ph,
+  border_color = "grey60",
+  fontsize = 10,
+  title = NA,
+  display_numbers = F
+) {
   ph$border_color <- border_color
   ph$fontsize <- fontsize
   ph$main <- title
@@ -50,13 +52,15 @@ pheat_display_main <- function (ph,
 
 #' @rdname pheat_display
 #' @export
-pheat_display_rows <- function (ph,
-                                height = 10,
-                                show_names = TRUE,
-                                fontsize = NA,
-                                gaps = NULL,
-                                labels = NULL,
-                                dendrogram_width = NA) {
+pheat_display_rows <- function(
+  ph,
+  height = 10,
+  show_names = TRUE,
+  fontsize = NA,
+  gaps = NULL,
+  labels = NULL,
+  dendrogram_width = NA
+) {
   ph$cellheight <- height
   ph$show_rownames <- show_names
   # If fontsize is not given, we leave it out of the resultant object
@@ -77,13 +81,15 @@ pheat_display_rows <- function (ph,
 
 #' @rdname pheat_display
 #' @export
-pheat_display_cols <- function (ph,
-                                width = 10,
-                                show_names = TRUE,
-                                fontsize = NA,
-                                gaps = NULL,
-                                labels = NULL,
-                                dendrogram_height = NA) {
+pheat_display_cols <- function(
+  ph,
+  width = 10,
+  show_names = TRUE,
+  fontsize = NA,
+  gaps = NULL,
+  labels = NULL,
+  dendrogram_height = NA
+) {
   ph$cellwidth <- width
   ph$show_colnames <- show_names
   if (not_scalar_na(fontsize)) {

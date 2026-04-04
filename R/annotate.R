@@ -13,7 +13,7 @@ NULL
 
 #' @rdname pheat_annotate
 #' @export
-pheat_annotate_rows <- function (ph, annotation, rownames_in = 1) {
+pheat_annotate_rows <- function(ph, annotation, rownames_in = 1) {
   annotation <- make_rownames(annotation, rownames_in)
   ph$annotation_row <- annotation
   ph
@@ -21,7 +21,7 @@ pheat_annotate_rows <- function (ph, annotation, rownames_in = 1) {
 
 #' @rdname pheat_annotate
 #' @export
-pheat_annotate_cols <- function (ph, annotation, rownames_in = 1) {
+pheat_annotate_cols <- function(ph, annotation, rownames_in = 1) {
   annotation <- make_rownames(annotation, rownames_in)
   ph$annotation_col <- annotation
   ph

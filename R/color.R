@@ -7,10 +7,7 @@
 #' @param na_color Color for \code{NA} values in the heatmap
 #' @return A modified heatmap of class "pheat"
 #' @export
-pheat_color <- function (ph,
-                         color = NA,
-                         breaks = NA,
-                         na_color = "#DDDDDD") {
+pheat_color <- function(ph, color = NA, breaks = NA, na_color = "#DDDDDD") {
   if (not_scalar_na(color) && not_scalar_na(breaks)) {
     if (length(breaks) != (length(color) + 1)) {
       warning("Length of breaks is not length of colors + 1.")
@@ -24,7 +21,7 @@ pheat_color <- function (ph,
   ph
 }
 
-saturated_rainbow <- function (n, saturation_limit = 0.4) {
+saturated_rainbow <- function(n, saturation_limit = 0.4) {
   saturated_len <- floor(n * (1 - saturation_limit))
   unsaturated_len <- n - saturated_len
   unsaturated_colors <- rev(
@@ -45,10 +42,12 @@ saturated_rainbow <- function (n, saturation_limit = 0.4) {
 #' @param na_color Color for \code{NA} values in the heatmap
 #' @return A modified heatmap of class "pheat"
 #' @export
-pheat_color_saturated <- function (ph,
-                                   saturation_limit = 0.4,
-                                   upper_limit = 1.0,
-                                   na_color = "#DDDDDD") {
+pheat_color_saturated <- function(
+  ph,
+  saturation_limit = 0.4,
+  upper_limit = 1.0,
+  na_color = "#DDDDDD"
+) {
   colors <- saturated_rainbow(101, saturation_limit = saturation_limit)
   breaks <- c(0, 1e-10, seq(0.01, 1, length.out = 100))
   pheat_color(ph, color = colors, breaks = breaks)
@@ -60,7 +59,7 @@ pheat_color_saturated <- function (ph,
 #'   for the annotation, and the value is a (named) character vector of colors
 #' @return A modified heatmap of class "pheat"
 #' @export
-pheat_annotation_color <- function (ph, ...) {
+pheat_annotation_color <- function(ph, ...) {
   ph$annotation_colors <- list(...)
   ph
 }
