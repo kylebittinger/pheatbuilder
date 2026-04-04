@@ -27,8 +27,10 @@ pheat_color <- function (ph,
 saturated_rainbow <- function (n, saturation_limit = 0.4) {
   saturated_len <- floor(n * (1 - saturation_limit))
   unsaturated_len <- n - saturated_len
-  unsaturated_colors <- rev(rainbow(unsaturated_len, start = 0, end = 0.6))
-  last_color <- tail(unsaturated_colors, n = 1)
+  unsaturated_colors <- rev(
+    grDevices::rainbow(unsaturated_len, start = 0, end = 0.6)
+  )
+  last_color <- utils::tail(unsaturated_colors, n = 1)
   saturated_colors <- rep(last_color, saturated_len)
   colors <- c(unsaturated_colors, saturated_colors)
   colors[1] <- "#FFFFFFFF"
