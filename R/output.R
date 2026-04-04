@@ -3,7 +3,7 @@
 #' @param ... Additional arguments passed to other methods
 #' @export
 print.pheat <- function (x, ...) {
-  pheatmap:::print.pheatmap(do.call(pheatmap::pheatmap, x))
+  grid::grid.draw(do.call(pheatmap::pheatmap, x))
 }
 
 #' Save the heatmap to a file
