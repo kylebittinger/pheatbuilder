@@ -12,7 +12,7 @@ pheat_display_main(
   border_color = "grey60",
   fontsize = 10,
   title = NA,
-  display_numbers = F
+  display_numbers = FALSE
 )
 
 pheat_display_rows(
@@ -45,7 +45,9 @@ borders.}
 
 \item{title}{Title of heatmap}
 
-\item{display_numbers}{logical determining if the numeric values are also printed to the cells. If this is a matrix (with same dimensions as original matrix), the contents of the matrix are shown instead of original values.}
+\item{display_numbers}{logical determining if the numeric values are also
+printed to the cells. If this is a matrix (with same dimensions as original
+matrix), the contents of the matrix are shown instead of original values.}
 
 \item{height, width}{Row height and column width. If set to \code{NA}, the
 size varies according to the available space}
